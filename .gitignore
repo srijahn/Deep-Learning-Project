@@ -1,0 +1,4 @@
+ntk_env/
+pycache/
+*.pyc
+.ipynb_checkpoints/
