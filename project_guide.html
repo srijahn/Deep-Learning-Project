@@ -346,6 +346,7 @@ python ntk_experiment.py --task all
 python ntk_experiment.py --task spectral     <span class="c"># fastest, ~5 min</span>
 python ntk_experiment.py --task regression   <span class="c"># ~20 min</span>
 python ntk_experiment.py --task mnist        <span class="c"># ~30 min</span>
+python ntk_experiment.py --task mnist --mnist-source torchvision --mnist-reps 100  <span class="c"># full MNIST replication (longer)</span>
 python ntk_experiment.py --task hybrid       <span class="c"># ~45 min</span>
 python ntk_experiment.py --task correlation  <span class="c"># ~20 min</span>
 python ntk_experiment.py --task dynamics     <span class="c"># ~30 min</span>
@@ -860,7 +861,7 @@ print(<span class="s">f"κ(K)  ↔ L2 error: ρ={r_cond:.3f}, p={p_cond:.4f}"</s
             <span class="swatch" style="background:#f78166"></span>
             <span class="setting-name">ntk_experiment.py</span>
             <span class="setting-params">Main experiment runner</span>
-            <span class="setting-note">6 functions, ~650 lines. Run with --task flag.</span>
+            <span class="setting-note">6 experiment tasks + helpers. Run with --task flag (supports MNIST source/reps options).</span>
           </div>
           <div class="setting-row">
             <span class="swatch" style="background:#bc8cff"></span>
@@ -878,12 +879,16 @@ print(<span class="s">f"κ(K)  ↔ L2 error: ρ={r_cond:.3f}, p={p_cond:.4f}"</s
             <span class="swatch" style="background:#3fb950"></span>
             <span class="setting-name">requirements.txt</span>
             <span class="setting-params">Dependencies</span>
-            <span class="setting-note">torch, numpy, matplotlib, seaborn, scipy, scikit-learn, tqdm</span>
+            <span class="setting-note">torch, torchvision, numpy, matplotlib, seaborn, scipy, scikit-learn, tqdm</span>
           </div>
         </div>
 
         <h2>Output Files</h2>
         <div class="card" style="padding:0;overflow:hidden">
+          <div class="setting-row" style="background:var(--bg3)">
+            <span class="setting-name">results/data/eigenvalue_error_correlation.npy</span>
+            <span class="setting-note">Saved Exp 5 metrics + Pearson/Spearman correlation statistics</span>
+          </div>
           <div class="setting-row" style="background:var(--bg3)">
             <span class="setting-name">results/figures/synthetic_regression.png</span>
             <span class="setting-note">Figure 1 analog — L2 error vs σ</span>
