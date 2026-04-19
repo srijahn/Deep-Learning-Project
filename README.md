@@ -1,7 +1,3 @@
-Here’s a clean, professional **README.md** version of your project content:
-
----
-
 # NTK Spectral Analysis: Regularization Effects on Generalization
 
 This project investigates how different regularization techniques influence **Neural Tangent Kernel (NTK)** eigenspectra and generalization behavior in overparameterized ReLU networks. The work is inspired by *Hu et al., AISTATS 2021*.
